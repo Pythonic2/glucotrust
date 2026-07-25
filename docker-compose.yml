@@ -1,0 +1,16 @@
+services:
+  glucotrust-landing:
+    container_name: glucotrust-landing
+    build:
+      context: .
+      dockerfile: Dockerfile
+    pull_policy: build
+    restart: always
+    ports:
+      - "3004:3004"
+    networks:
+      - pi_default
+
+networks:
+  pi_default:
+    external: true
